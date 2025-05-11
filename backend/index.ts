@@ -1,18 +1,14 @@
 import express from "express";
-import { Database } from "./Database";
+import { json } from "body-parser";
+import { router as userRouter } from "./routes/users";
+import { router as carRouter } from "./routes/cars";
 
 const app = express();
-const port = 3000;
 
-// Свързваме се към базата данни (по желание можеш да тестваш връзката тук)
-const db = new Database();
+app.use(json());
+app.use("/users", userRouter);
+app.use("/cars", carRouter);
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("🚗 Car Sales API is running!");
-});
-
-app.listen(port, () => {
-    console.log(`✅ Server is running at http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
 });
