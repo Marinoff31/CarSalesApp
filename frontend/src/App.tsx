@@ -7,6 +7,7 @@ import EditCar from "./pages/EditCar";
 import UserList from "./pages/UserList";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
+import ManageCars from "./pages/ManageCars";
 import CreateCar from "./pages/CreateCar";
 
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/results" element={<SearchResults />} />
+        <Route path="/manage-cars" element={<ManageCars />} />
         <Route path="/create-car" element={<CreateCar />} />
         <Route path="/manage-users" element={<div>Управление на потребители</div>} />
         <Route path="/" element={<Home />} />

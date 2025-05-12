@@ -58,8 +58,9 @@ export class CarModel {
     const params: any[] = [];
 
     if (query.brand) {
-      sql += " AND brand = ?";
-      params.push(query.brand);
+      // Променяме от '=' на 'LIKE', за да търсим частични съвпадения
+      sql += " AND brand LIKE ?";
+      params.push(`%${query.brand}%`); // добавяме % за търсене на частични съвпадения
     }
     if (query.engine_type) {
       sql += " AND engine_type = ?";

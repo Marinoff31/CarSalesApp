@@ -17,9 +17,9 @@ static async getAll() {
   return rows;
 }
   static async getById(id: number) {
-    const [rows] = await db.conn.execute("SELECT * FROM users WHERE id = ?", [id]);
-    return rows;
-  }
+  const [rows] = await db.conn.execute("SELECT * FROM users WHERE id = ?", [id]);
+  return Array.isArray(rows) && rows.length > 0 ? rows[0] : null;
+}
 
   static async update(id: number, user: IUser) {
     const [result] = await db.conn.execute(

@@ -13,8 +13,8 @@ const EditCar = () => {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const res = await axios.get<ICar>(`http://localhost:3000/cars/${id}`);
-        setCar(res.data);
+        const res = await axios.get<ICar[]>(`http://localhost:3000/cars/${id}`);
+        setCar(res.data[0]); // Тук използваме първия елемент от масива
         setLoading(false);
       } catch (err) {
         setError("Не успяхме да заредим обявата.");
@@ -24,7 +24,9 @@ const EditCar = () => {
     fetchCar();
   }, [id]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setCar((prev) => (prev ? { ...prev, [name]: value } : prev));
   };

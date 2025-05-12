@@ -8,7 +8,7 @@ const Navbar = () => {
           <Link to="/" style={styles.link}>Начало</Link>
         </li>
         <li style={styles.li}>
-          <Link to="/manage-cars" style={styles.link}>Създай обява</Link>
+          <Link to="/manage-cars" style={styles.link}>Управление на обяви</Link>
         </li>
         <li style={styles.li}>
           <Link to="/users" style={styles.link}>Управление на потребители</Link>

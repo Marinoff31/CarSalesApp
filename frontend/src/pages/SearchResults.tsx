@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { ICar } from "../../common/interfaces";
 
@@ -33,16 +33,10 @@ const SearchResults = () => {
             <h3>{car.brand} - {car.production_year}</h3>
             <p>{car.engine_type} / {car.horsepower} к.с. / {car.mileage} км</p>
             <p>Цена: {car.price} лв.</p>
-            {car.image_url && <img src={car.image_url} alt="car" style={{ width: "200px" }} />}
+            {car.image_url && (
+              <img src={car.image_url} alt="car" style={{ width: "200px" }} />
+            )}
             {car.description && <p>{car.description}</p>}
-
-            {}
-            <Link to={`/edit-car/${car.id}`}>
-              <button>✏️Редактирай</button>
-            </Link>
-
-            {}
-            <button>🗑️Изтрий</button>
           </div>
         ))
       )}
@@ -51,3 +45,4 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
+
