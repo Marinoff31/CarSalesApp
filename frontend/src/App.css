@@ -36,3 +36,94 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('./assets/background.jpg');
+  background-size: cover; 
+  background-position: center center;
+  background-attachment: fixed; 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-attachment: inherit;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #0077cc;
+  outline: none;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+}
+
+nav {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+textarea,
+button {
+  margin-top: 10px;
+}

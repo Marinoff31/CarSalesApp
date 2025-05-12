@@ -24,7 +24,7 @@ const UsersList = () => {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Списък на потребители</h2>
+      <h2 style={{ color: "white" }}>Списък на потребители</h2>
       <Link to="/create-user">
         <button>Създай потребител</button>
       </Link>
@@ -33,12 +33,12 @@ const UsersList = () => {
       ) : (
         <div>
           {users.map((user) => (
-            <div key={user.id} style={{ border: "1px solid #ccc", padding: "1rem", marginBottom: "1rem" }}>
-              <h3>{user.name}</h3>
-              <p>{user.address}</p>
-              <p>{user.phone}</p>
+            <div  key={user.id} style={{ color: "white", border: "1px solid #ccc", padding: "1rem", marginBottom: "1rem" }}>
+              <h3 style={{ color: "white" }}>{user.name}</h3>
+              <p style={{ color: "white" }}>{user.address}</p>
+              <p style={{ color: "white" }}>{user.phone}</p>
               <Link to={`/edit-user/${user.id}`}>
-                <button>Редактирай</button>
+                <button style={{ marginRight: "0.5rem" }}>Редактирай</button>
               </Link>
               <button onClick={() => handleDelete(user.id!)}>Изтрий</button>
             </div>

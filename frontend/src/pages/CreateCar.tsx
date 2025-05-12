@@ -19,7 +19,6 @@ const CreateCar = () => {
 
   const [users, setUsers] = useState<IUser[]>([]);
 
-  // Зареждане на потребители за падащото меню
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get<IUser[]>("http://localhost:3000/users");
@@ -52,15 +51,17 @@ const CreateCar = () => {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>Създай обява</h2>
+    <div style={{ padding: "0.5rem" }}>
+      <h2 style={{ color: "white" }}>Създай обява</h2>
       <form
         onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+        style={{ display: "flex", flexDirection: "column", gap: "0.5rem", background: "transparent" }}
       >
-        <label>
+        <label style={{ color: "white" }}>
           Марка:
           <input
+            style={{
+            borderColor: "#000" }}
             name="brand"
             value={car.brand}
             onChange={handleChange}
@@ -68,9 +69,11 @@ const CreateCar = () => {
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Година на производство:
           <input
+            style={{
+            borderColor: "#000"}}
             name="production_year"
             type="number"
             value={car.production_year || ""}
@@ -79,9 +82,11 @@ const CreateCar = () => {
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Пробег (км):
           <input
+            style={{
+            borderColor: "#000"}}
             name="mileage"
             type="number"
             value={car.mileage}
@@ -89,9 +94,9 @@ const CreateCar = () => {
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Тип двигател:
-          <select name="engine_type" value={car.engine_type} onChange={handleChange}>
+          <select style={{ borderColor: "#000"}} name="engine_type" value={car.engine_type} onChange={handleChange}>
             <option>Бензин</option>
             <option>Дизел</option>
             <option>Електрически</option>
@@ -99,9 +104,11 @@ const CreateCar = () => {
           </select>
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Конски сили:
           <input
+          style={{
+            borderColor: "#000"}}
             name="horsepower"
             type="number"
             value={car.horsepower}
@@ -109,9 +116,11 @@ const CreateCar = () => {
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Цена (лв.):
           <input
+          style={{
+            borderColor: "#000"}}
             name="price"
             type="number"
             value={car.price}
@@ -119,27 +128,31 @@ const CreateCar = () => {
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Линк към снимка:
           <input
+          style={{
+            borderColor: "#000"}}
             name="image_url"
             value={car.image_url}
             onChange={handleChange}
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Описание:
           <textarea
+          style={{
+            borderColor: "#000"}}
             name="description"
             value={car.description}
             onChange={handleChange}
           />
         </label>
 
-        <label>
+        <label style={{ color: "white" }}>
           Собственик:
-          <select name="owner_id" value={car.owner_id} onChange={handleChange} required>
+          <select style={{ borderColor: "#000"}} name="owner_id" value={car.owner_id} onChange={handleChange} required>
             <option value="">-- Избери потребител --</option>
             {users.map((user) => (
               <option key={user.id} value={user.id}>

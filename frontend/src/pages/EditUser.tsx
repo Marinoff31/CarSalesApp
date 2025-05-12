@@ -29,8 +29,8 @@ const EditUser = () => {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Редактирай потребител</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 style={{ color: "#fff" }}>Редактирай потребител</h2>
+      <form onSubmit={handleSubmit} style={{ background: "transparent" }}>
         <input
           name="name"
           value={user.name}

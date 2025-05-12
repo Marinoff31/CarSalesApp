@@ -14,7 +14,7 @@ const EditCar = () => {
     const fetchCar = async () => {
       try {
         const res = await axios.get<ICar[]>(`http://localhost:3000/cars/${id}`);
-        setCar(res.data[0]); // Тук използваме първия елемент от масива
+        setCar(res.data[0]);
         setLoading(false);
       } catch (err) {
         setError("Не успяхме да заредим обявата.");
@@ -46,8 +46,8 @@ const EditCar = () => {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Редактирай обява</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 style={{ color: "white" }}>Редактирай обява</h2>
+      <form onSubmit={handleSubmit} style={{ background: "transparent" }}>
         <input
           name="brand"
           value={car?.brand ?? ""}

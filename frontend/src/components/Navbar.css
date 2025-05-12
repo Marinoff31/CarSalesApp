@@ -1,0 +1,16 @@
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 5px;
+  transition: border-bottom 0.2s ease;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid white;
+}
+
+.separator {
+  color: white;
+  margin: 0 5px;
+}

@@ -1,3 +1,4 @@
+import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -9,6 +10,7 @@ import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
 import ManageCars from "./pages/ManageCars";
 import CreateCar from "./pages/CreateCar";
+
 
 
 function App() {
