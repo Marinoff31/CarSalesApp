@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,10 +8,10 @@ const Navbar = () => {
           <Link to="/" style={styles.link}>Начало</Link>
         </li>
         <li style={styles.li}>
-          <Link to="/manage-cars" style={styles.link}>Управление на обяви</Link>
+          <Link to="/manage-cars" style={styles.link}>Създай обява</Link>
         </li>
         <li style={styles.li}>
-          <Link to="/manage-users" style={styles.link}>Управление на потребители</Link>
+          <Link to="/users" style={styles.link}>Управление на потребители</Link>
         </li>
       </ul>
     </nav>
