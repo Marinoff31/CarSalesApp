@@ -1,22 +1,22 @@
-// App.tsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import CreateCar from './pages/CreateCar';
-import Listings from './pages/Listings';
-import Navigation from './components/Navigation';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
 
-const App: React.FC = () => {
+function App() {
   return (
     <Router>
-      <Navigation />
       <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="/results" element={<SearchResults />} />
+        <Route path="/manage-cars" element={<div>Управление на обяви (в процес на разработка)</div>} />
+        <Route path="/manage-users" element={<div>Управление на потребители (в процес на разработка)</div>} />
         <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreateCar />} />
-        <Route path="/listings" element={<Listings />} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
+

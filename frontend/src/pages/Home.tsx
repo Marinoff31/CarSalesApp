@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import CarList, { CarDataWithId } from '../components/CarList';
-import FilterBar, { FilterParams } from '../components/FilterBar';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Home() {
-  const [filters, setFilters] = useState<FilterParams>({});
-  const [cars, setCars] = useState<CarDataWithId[]>([]);
+const Home = () => {
+  const navigate = useNavigate();
+  const [filters, setFilters] = useState({
+    brand: "",
+    engine_type: "",
+    min_price: "",
+    max_price: "",
+    year: "",
+  });
 
-  useEffect(() => {
-    const fetchCarsData = async () => {
-      try {
-        const url = new URL('http://localhost:3000/api/cars');
-        
-        // Проверяваме дали има стойности в filters
-        if (filters) {
-          Object.keys(filters).forEach((key) => {
-            const value = filters[key as keyof FilterParams]; // Явно указване на тип на ключа
-            if (value !== undefined && value !== null) {
-              url.searchParams.append(key, String(value)); // Преобразуваме в стринг
-            }
-          });
-        }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFilters((prev) => ({ ...prev, [name]: value }));
+  };
 
-        const response = await fetch(url.toString());
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error('Грешка при зареждане на автомобили:', error);
-      }
-    };
-
-    fetchCarsData();
-  }, [filters]);
+  const handleSearch = () => {
+    const params = new URLSearchParams(filters as any).toString();
+    navigate(`/search?${params}`);
+  };
 
   return (
-    <div>
-      <h1>Търсене на автомобили</h1>
-      <FilterBar onFilterChange={setFilters} />
-      <CarList cars={cars} onEdit={() => {}} onDelete={() => {}} />
+    <div style={{ padding: "2rem" }}>
+      <h2>Търсене на автомобили</h2>
+      <div style={{ display: "flex", flexDirection: "column", maxWidth: "400px" }}>
+        <input name="brand" placeholder="Марка" onChange={handleChange} />
+        <input name="year" placeholder="Година на производство" type="number" onChange={handleChange} />
+        <input name="min_price" placeholder="Минимална цена" type="number" onChange={handleChange} />
+        <input name="max_price" placeholder="Максимална цена" type="number" onChange={handleChange} />
+        <select name="engine_type" onChange={handleChange}>
+          <option value="">Тип двигател</option>
+          <option value="Бензин">Бензин</option>
+          <option value="Дизел">Дизел</option>
+          <option value="Електрически">Електрически</option>
+          <option value="Хибрид">Хибрид</option>
+        </select>
+        <button style={{ marginTop: "1rem" }} onClick={handleSearch}>Търси</button>
+      </div>
     </div>
   );
-}
+};
+
+export default Home;

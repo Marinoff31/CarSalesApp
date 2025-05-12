@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { json } from "body-parser";
 import { router as userRouter } from "./routes/users";
 import { router as carRouter } from "./routes/cars";
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("API is running.");
 });
 
+app.use(cors());
 app.use("/users", userRouter);
 app.use("/cars", carRouter);
 
