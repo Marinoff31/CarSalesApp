@@ -70,8 +70,8 @@ const CreateUser = () => {
           type="submit"
           style={{
             padding: "10px",
-            backgroundColor: "#007bff",
-            color: "white",
+            backgroundColor: "#a4a4a4",
+            color: "black",
             border: "none",
             borderRadius: "4px",
             cursor: "pointer",

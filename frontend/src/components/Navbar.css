@@ -1,3 +1,27 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 4px;
+  min-width: 160px;
+  z-index: 999;
+  padding: 5px 0;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-link:hover {
+  background-color: #333;
+}
+
 .nav-link {
   color: white;
   text-decoration: none;
