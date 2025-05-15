@@ -24,7 +24,6 @@ function App() {
         <Route path="/results" element={<SearchResults />} />
         <Route path="/manage-cars" element={<ManageCars />} />
         <Route path="/create-car" element={<CreateCar />} />
-        <Route path="/manage-users" element={<div>Управление на потребители</div>} />
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<SearchResults />} />
         <Route path="/edit-car/:id" element={<EditCar />} />

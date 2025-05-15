@@ -20,7 +20,7 @@ const CreateUser = () => {
   return (
     <div style={{ padding: "2rem", backgroundColor: "transparent", borderRadius: "8px", maxWidth: "400px", margin: "auto" }}>
       <h2 style={{ color: "#fff", textAlign: "center", fontSize: "24px" }}>Създай потребител</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", background: "transparent" }}>
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", background: "transparent", alignItems: "center"  }}>
         <input
           name="name"
           value={user.name}

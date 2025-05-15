@@ -22,22 +22,15 @@ const SearchResults = () => {
         <p>Няма намерени обяви.</p>
       ) : (
         cars.map((car) => (
-          <div
-            key={car.id}
-            style={{
-              color: "#fff",
-              border: "1px solid #ccc",
-              padding: "1rem",
-              marginBottom: "1rem",
-            }}
-          >
-            <h3 style={{color: "white"}}>{car.brand} - {car.production_year}</h3>
-            <p style={{color: "white"}}>{car.engine_type} / {car.horsepower} к.с. / {car.mileage} км</p>
-            <p style={{color: "white"}}>Цена: {car.price} лв.</p>
-            {car.image_url && (
-              <img src={car.image_url} alt="car" style={{ width: "200px" }} />
-            )}
-            {car.description && <p>{car.description}</p>}
+          <div key={car.id} className="car-card">
+            <h3>{car.brand}</h3>
+            <p>Година на производство: {car.production_year}</p>
+            <p>Двигател: {car.engine_type}</p> 
+            <p>Мощност: {car.horsepower} к.с.</p>
+            <p>Пробег: {car.mileage} км</p>
+            <p>Цена: {car.price} лв.</p>
+            <p>Информация: {car.description}</p>
+            {car.image_url && <img src={car.image_url} alt="car" />}
           </div>
         ))
       )}

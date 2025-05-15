@@ -25,7 +25,7 @@ const Home = () => {
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "50vh" }}>
   <div style={{ padding: "2rem", textAlign: "center" }}>
     <h2 style={{ color: "white" }}>Търсене на автомобили</h2>
-    <div style={{ display: "flex", flexDirection: "column", maxWidth: "400px", margin: "0 auto", gap: "1rem" }}>
+    <div style={{ display: "flex", flexDirection: "column", maxWidth: "400px", margin: "0 auto", gap: "1rem", alignItems: "center" }}>
       <input name="brand" placeholder="Марка" onChange={handleChange} />
       <input name="year" placeholder="Година на производство" type="number" onChange={handleChange} />
       <input name="min_price" placeholder="Минимална цена" type="number" onChange={handleChange} />

@@ -22,43 +22,25 @@ const ManageCars = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
-      <h2 style={{ color: "white" }}>Управление на обяви</h2>
+    <div className="manage-cars-container">
+      <h2 className="manage-cars-heading">Управление на обяви</h2>
       {cars.length === 0 ? (
         <p>Няма налични обяви.</p>
       ) : (
         cars.map((car) => (
-          <div
-            key={car.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "1rem",
-              marginBottom: "1rem",
-              position: "relative",
-              color: "white",
-              background: "#3D3D3D"
-            }}
-          >
-            <h3>{car.brand} - {car.production_year}</h3>
-            <p>{car.engine_type} / {car.horsepower} к.с. / {car.mileage} км</p>
+          <div key={car.id} className="car-card">
+            <h3>{car.brand}</h3>
+            <p>Година на производство: {car.production_year}</p>
+            <p>Двигател: {car.engine_type}</p> 
+            <p>Мощност: {car.horsepower} к.с.</p>
+            <p>Пробег: {car.mileage} км</p>
             <p>Цена: {car.price} лв.</p>
-            {car.image_url && <img src={car.image_url} alt="car" style={{ width: "200px" }} />}
-            <p>{car.description}</p>
+            <p>Информация: {car.description}</p>
+            {car.image_url && <img src={car.image_url} alt="car" />}
 
-            {}
-            <div
-              style={{
-                position: "absolute",
-                right: "1rem",
-                top: "50%",
-                transform: "translateY(-50%)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
-              }}
-            >
+            <div className="car-card-buttons">
               <Link to={`/edit-car/${car.id}`}>
-                <button style={{ marginBottom: "0.2rem" }}>Редактирай</button>
+                <button>Редактирай</button>
               </Link>
               <button onClick={() => handleDelete(car.id!)}>Изтрий</button>
             </div>

@@ -55,7 +55,7 @@ const CreateCar = () => {
       <h2 style={{ color: "white" }}>Създай обява</h2>
       <form
         onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", gap: "0.5rem", background: "transparent" }}
+        style={{ display: "flex", flexDirection: "column", gap: "0.5rem", background: "transparent"}}
       >
         <label style={{ color: "white" }}>
           Марка:
