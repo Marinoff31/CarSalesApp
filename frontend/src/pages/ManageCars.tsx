@@ -25,13 +25,13 @@ const ManageCars = () => {
     <div className="manage-cars-container">
       <h2 className="manage-cars-heading">Управление на обяви</h2>
       {cars.length === 0 ? (
-        <p>Няма налични обяви.</p>
+        <p className="cars-empty">Няма налични обяви.</p>
       ) : (
         cars.map((car) => (
           <div key={car.id} className="car-card">
             <h3>{car.brand}</h3>
             <p>Година на производство: {car.production_year}</p>
-            <p>Двигател: {car.engine_type}</p> 
+            <p>Двигател: {car.engine_type}</p>
             <p>Мощност: {car.horsepower} к.с.</p>
             <p>Пробег: {car.mileage} км</p>
             <p>Цена: {car.price} лв.</p>

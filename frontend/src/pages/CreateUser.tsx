@@ -18,23 +18,16 @@ const CreateUser = () => {
   };
 
   return (
-    <div style={{ padding: "2rem", backgroundColor: "transparent", borderRadius: "8px", maxWidth: "400px", margin: "auto" }}>
-      <h2 style={{ color: "#fff", textAlign: "center", fontSize: "24px" }}>Създай потребител</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem", background: "transparent", alignItems: "center"  }}>
+    <div className="create-user-container">
+      <h2 className="form-title">Създай потребител</h2>
+      <form onSubmit={handleSubmit} className="create-user-form">
         <input
           name="name"
           value={user.name}
           onChange={handleChange}
           placeholder="Име"
           required
-          style={{
-            padding: "10px",
-            margin: "5px 0",
-            border: "1px solid #333",
-            borderRadius: "4px",
-            backgroundColor: "#fff",
-            fontSize: "16px",
-          }}
+          className="form-input"
         />
         <input
           name="address"
@@ -42,14 +35,7 @@ const CreateUser = () => {
           onChange={handleChange}
           placeholder="Адрес"
           required
-          style={{
-            padding: "10px",
-            margin: "5px 0",
-            border: "1px solid #333",
-            borderRadius: "4px",
-            backgroundColor: "#fff",
-            fontSize: "16px",
-          }}
+          className="form-input"
         />
         <input
           name="phone"
@@ -57,28 +43,9 @@ const CreateUser = () => {
           onChange={handleChange}
           placeholder="Телефон"
           required
-          style={{
-            padding: "10px",
-            margin: "5px 0",
-            border: "1px solid #333",
-            borderRadius: "4px",
-            backgroundColor: "#fff",
-            fontSize: "16px",
-          }}
+          className="form-input"
         />
-        <button
-          type="submit"
-          style={{
-            padding: "10px",
-            backgroundColor: "#a4a4a4",
-            color: "black",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            fontSize: "16px",
-            transition: "background-color 0.3s",
-          }}
-        >
+        <button type="submit" className="form-button">
           Създай
         </button>
       </form>

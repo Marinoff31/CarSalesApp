@@ -45,9 +45,9 @@ const EditCar = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2 style={{ color: "white" }}>Редактирай обява</h2>
-      <form onSubmit={handleSubmit} style={{ background: "transparent" }}>
+    <div className="edit-car-container">
+      <h2 className="form-heading">Редактирай обява</h2>
+      <form onSubmit={handleSubmit} className="car-form">
         <input
           name="brand"
           value={car?.brand ?? ""}

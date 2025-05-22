@@ -51,52 +51,27 @@ const CreateCar = () => {
   };
 
   return (
-    <div style={{ padding: "0.5rem" }}>
-      <h2 style={{ color: "white" }}>Създай обява</h2>
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", gap: "0.5rem", background: "transparent"}}
-      >
-        <label style={{ color: "white" }}>
+    <div className="create-car-container">
+      <h2 className="form-heading">Създай обява</h2>
+      <form onSubmit={handleSubmit} className="car-form">
+        <label>
           Марка:
-          <input
-            style={{
-            borderColor: "#000" }}
-            name="brand"
-            value={car.brand}
-            onChange={handleChange}
-            required
-          />
+          <input name="brand" value={car.brand} onChange={handleChange} required />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Година на производство:
-          <input
-            style={{
-            borderColor: "#000"}}
-            name="production_year"
-            type="number"
-            value={car.production_year || ""}
-            onChange={handleChange}
-            required
-          />
+          <input name="production_year" type="number" value={car.production_year || ""} onChange={handleChange} required />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Пробег (км):
-          <input
-            style={{
-            borderColor: "#000"}}
-            name="mileage"
-            type="number"
-            value={car.mileage}
-            onChange={handleChange}
-          />
+          <input name="mileage" type="number" value={car.mileage} onChange={handleChange} />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Тип двигател:
-          <select style={{ borderColor: "#000"}} name="engine_type" value={car.engine_type} onChange={handleChange}>
+          <select name="engine_type" value={car.engine_type} onChange={handleChange}>
             <option>Бензин</option>
             <option>Дизел</option>
             <option>Електрически</option>
@@ -104,55 +79,29 @@ const CreateCar = () => {
           </select>
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Конски сили:
-          <input
-          style={{
-            borderColor: "#000"}}
-            name="horsepower"
-            type="number"
-            value={car.horsepower}
-            onChange={handleChange}
-          />
+          <input name="horsepower" type="number" value={car.horsepower} onChange={handleChange} />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Цена (лв.):
-          <input
-          style={{
-            borderColor: "#000"}}
-            name="price"
-            type="number"
-            value={car.price}
-            onChange={handleChange}
-          />
+          <input name="price" type="number" value={car.price} onChange={handleChange} />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Линк към снимка:
-          <input
-          style={{
-            borderColor: "#000"}}
-            name="image_url"
-            value={car.image_url}
-            onChange={handleChange}
-          />
+          <input name="image_url" value={car.image_url} onChange={handleChange} />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Описание:
-          <textarea
-          style={{
-            borderColor: "#000"}}
-            name="description"
-            value={car.description}
-            onChange={handleChange}
-          />
+          <textarea name="description" value={car.description} onChange={handleChange} />
         </label>
 
-        <label style={{ color: "white" }}>
+        <label>
           Собственик:
-          <select style={{ borderColor: "#000"}} name="owner_id" value={car.owner_id} onChange={handleChange} required>
+          <select name="owner_id" value={car.owner_id} onChange={handleChange} required>
             <option value="">-- Избери потребител --</option>
             {users.map((user) => (
               <option key={user.id} value={user.id}>

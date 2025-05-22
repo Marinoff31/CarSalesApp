@@ -8,13 +8,13 @@ const EditUser = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({ name: "", address: "", phone: "" });
 
- useEffect(() => {
-  const fetchUser = async () => {
-    const res = await axios.get<IUser>(`http://localhost:3000/users/${id}`);
-    setUser(res.data); // сега TypeScript знае, че res.data е IUser
-  };
-  fetchUser();
-}, [id]);
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get<IUser>(`http://localhost:3000/users/${id}`);
+      setUser(res.data);
+    };
+    fetchUser();
+  }, [id]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -28,9 +28,9 @@ const EditUser = () => {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2 style={{ color: "#fff" }}>Редактирай потребител</h2>
-      <form onSubmit={handleSubmit} style={{ background: "transparent" }}>
+    <div className="edit-user-container">
+      <h2 className="form-title">Редактирай потребител</h2>
+      <form onSubmit={handleSubmit} className="edit-user-form">
         <input
           name="name"
           value={user.name}

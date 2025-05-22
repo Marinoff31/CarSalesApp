@@ -16,10 +16,10 @@ const SearchResults = () => {
   }, [location.search]);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2 style={{ color: "white" }}>Резултати от търсенето</h2>
+    <div className="search-results-container">
+      <h2 className="search-results-heading">Резултати от търсенето</h2>
       {cars.length === 0 ? (
-        <p>Няма намерени обяви.</p>
+        <p className="cars-empty">Няма намерени обяви.</p>
       ) : (
         cars.map((car) => (
           <div key={car.id} className="car-card">
@@ -39,4 +39,3 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
-
