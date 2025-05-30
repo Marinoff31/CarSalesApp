@@ -147,19 +147,20 @@ button {
 
 .manage-cars-container, .users-container {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .manage-cars-heading, .users-heading {
   color: white;
+  text-align: center;
 }
+
 
 .car-card, .user-card {
   border: 1px solid #ccc;
   padding: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
+  margin-bottom: 1.5rem;
   color: white;
   background: repeating-linear-gradient(
     90deg,
@@ -179,8 +180,33 @@ button {
   );
 }
 
-.car-card img {
-  width: 200px;
+.car-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.car-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+.car-image {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+}
+
+.car-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .car-card-buttons {
@@ -195,6 +221,46 @@ button {
 
 .car-card-buttons button, .user-button {
   margin-bottom: 0.2rem;
+}
+
+.car-card-buttons-bottom-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+.car-card-buttons-bottom-row button {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 0px,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    linear-gradient(
+      135deg,
+      #c0c0c0 0%,
+      #d3d3d3 20%,
+      #b5b5b5 40%,
+      #e0e0e0 60%,
+      #a9a9a9 80%,
+      #c0c0c0 100%
+    );
+  color: black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+}
+
+.car-card-buttons-bottom-row button:hover {
+  background-color: #498bbb;
 }
 
 .user-actions {
@@ -337,10 +403,6 @@ button {
     );
 }
 
-.car-card img {
-  width: 200px;
-}
-
 .car-card-buttons {
   position: absolute;
   right: 1rem;
@@ -386,10 +448,6 @@ button {
       #1f1f1f 80%,
       #2e2e2e 100%
     );
-}
-
-.car-card img {
-  width: 200px;
 }
 
 .users-container {

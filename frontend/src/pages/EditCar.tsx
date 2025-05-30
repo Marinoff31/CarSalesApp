@@ -35,7 +35,7 @@ const EditCar = () => {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:3000/cars/${id}`, car);
-      navigate("/");
+      navigate("/manage-cars");
     } catch (err) {
       setError("Не успяхме да запишем промените.");
     }

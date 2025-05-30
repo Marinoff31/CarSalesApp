@@ -29,20 +29,25 @@ const ManageCars = () => {
       ) : (
         cars.map((car) => (
           <div key={car.id} className="car-card">
-            <h3>{car.brand}</h3>
-            <p>Година на производство: {car.production_year}</p>
-            <p>Двигател: {car.engine_type}</p>
-            <p>Мощност: {car.horsepower} к.с.</p>
-            <p>Пробег: {car.mileage} км</p>
-            <p>Цена: {car.price} лв.</p>
-            <p>Информация: {car.description}</p>
-            {car.image_url && <img src={car.image_url} alt="car" />}
-
-            <div className="car-card-buttons">
-              <Link to={`/edit-car/${car.id}`}>
-                <button>Редактирай</button>
-              </Link>
-              <button onClick={() => handleDelete(car.id!)}>Изтрий</button>
+            <div className="car-content">
+              <div className="car-info">
+                <h3>{car.brand}</h3>
+                <p>Година на производство: {car.production_year}</p>
+                <p>Двигател: {car.engine_type}</p>
+                <p>Мощност: {car.horsepower} к.с.</p>
+                <p>Пробег: {car.mileage} км</p>
+                <p>Цена: {car.price} лв.</p>
+                <p>Информация: {car.description}</p>
+              </div>
+              <div className="car-image">
+                {car.image_url && <img src={car.image_url} alt="car" />}
+                <div className="car-card-buttons-bottom-row">
+                  <Link to={`/edit-car/${car.id}`}>
+                    <button>Редактирай</button>
+                  </Link>
+                  <button onClick={() => handleDelete(car.id!)}>Изтрий</button>
+                </div>
+              </div>
             </div>
           </div>
         ))
