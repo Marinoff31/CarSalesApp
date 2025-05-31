@@ -337,10 +337,6 @@ button {
   padding: 2rem;
 }
 
-.car-form {
-  background: transparent;
-}
-
 .edit-user-container {
   padding: 2rem;
 }
@@ -379,43 +375,6 @@ button {
   color: white;
 }
 
-.car-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-  color: white;
-  background: repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    linear-gradient(
-      135deg,
-      #2e2e2e 0%,
-      #3a3a3a 20%,
-      #2b2b2b 40%,
-      #4a4a4a 60%,
-      #1f1f1f 80%,
-      #2e2e2e 100%
-    );
-}
-
-.car-card-buttons {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.car-card-buttons button {
-  margin-bottom: 0.2rem;
-}
 
 .search-results-container {
   padding: 2rem;
@@ -424,30 +383,6 @@ button {
 .search-results-heading {
   color: white;
   text-align: center;
-}
-
-.car-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-  color: white;
-  background: repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    linear-gradient(
-      135deg,
-      #2e2e2e 0%,
-      #3a3a3a 20%,
-      #2b2b2b 40%,
-      #4a4a4a 60%,
-      #1f1f1f 80%,
-      #2e2e2e 100%
-    );
 }
 
 .users-container {
@@ -483,16 +418,6 @@ button {
     #1f1f1f 80%,
     #2e2e2e 100%
   );
-}
-
-.user-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
 }
 
 .user-button {
